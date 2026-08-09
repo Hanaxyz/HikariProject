@@ -29,7 +29,7 @@ setTimeout(() => {
 
 begin.addEventListener("click", () => {
 
-    window.location.href="../home.html";
+    window.location.href="home.html";
 
 
 
