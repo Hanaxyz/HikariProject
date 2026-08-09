@@ -3,7 +3,7 @@ const homes =document.querySelectorAll(".home");
 const journalScreen=document.querySelector(".journal-screen");
 
 const mainScreen=document.querySelector(".main-screen");
-const historybtn=document.querySelector(".history-journal");
+
 const historyScreen =document.querySelector(".history-screen");
 
 
