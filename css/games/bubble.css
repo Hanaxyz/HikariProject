@@ -1,0 +1,96 @@
+
+
+body{
+
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;   
+    min-height:100vh;
+    gap:30px;
+    padding-top:50px;  
+    font-family: 'Courier New', Courier, monospace;
+    background-color: cadetblue;
+    background-repeat: no-repeat;
+          background-size: cover;
+    background-position: center;
+    z-index:-1;
+    
+
+
+}
+
+
+
+
+.title{
+
+font-size: 24px;
+text-align: center;
+ display: flex;
+ justify-content: center;
+  text-align: center;
+
+
+
+
+}
+
+.play-ground {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+}
+
+
+
+.bubble{
+
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+     height:80px;
+     width:80px;
+    border-radius: 50%;
+    border:1px solid #fff;
+    background-color: #ffffff42;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.547);
+    transition: 0.7s ease;
+    cursor: pointer;
+    animation: spawn  3s ease;
+
+
+
+}
+
+
+.pop{
+
+transform: translate(-50%,-50%)   scale(1.3);
+opacity:0;
+
+
+
+}
+
+
+@keyframes spawn{
+
+0%{
+
+opacity:0;
+transform:translate(-50%,-50%) scale(.7);
+
+}
+
+100%{
+
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+}

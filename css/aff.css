@@ -1,0 +1,188 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+   gap: 30px;
+    font-family: 'Courier New', Courier, monospace;
+        background:url(../assets/images/bg.jpg) ;
+    background-repeat: no-repeat;
+
+
+    background-position: center;
+    background-size: cover;
+
+
+}
+.main-container{
+  display: flex;
+   flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ gap:20px;
+ background-color: rgb(255, 255, 255);
+ box-shadow: 0 10px 10px  rgba(0, 0, 0, 0.23);
+ padding:14px;
+ height:65vh;
+ width:90%;
+ max-width: 400px;
+ border-radius: 20px;
+  transition: background-color 0.5s ease;
+
+
+
+}
+
+.title{
+
+font-size: 30px;
+
+
+
+
+}
+
+.display{
+     width: 80%;
+    min-height: 120px;
+position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    text-align: center;
+border-radius: 20px;
+
+box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+
+
+}
+.display::after{
+    content: "";
+
+    position: absolute;
+
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid rgb(255, 255, 255);
+     filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+    
+}
+
+
+
+.new-affirmation{
+background-color: rgb(229, 181, 181);
+border-radius: 20px;
+border: solid 1px white;
+    width: 180px;
+    height: 55px;
+cursor: pointer;
+font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+
+#hikari-smile{
+
+height:100px;
+width: 100px;
+
+
+
+
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/*  Phone */
+@media (max-width: 600px) {
+
+    body {
+        min-height: 100vh;
+        height: auto;
+        padding: 25px 15px;
+        box-sizing: border-box;
+        gap: 20px;
+    }
+
+    .main-container {
+        width: 90%;
+        max-width: 360px;
+        min-height: 70vh;
+        height: auto;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .display {
+        width: 90%;
+        min-height: 130px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .new-affirmation {
+        width: 180px;
+        height: 55px;
+    }
+
+    #hikari-smile {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+/*  Tablet / iPad */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        min-height: 100vh;
+        height: auto;
+        padding: 35px 20px;
+        box-sizing: border-box;
+    }
+
+    .main-container {
+        width: 80%;
+        max-width: 500px;
+        min-height: 65vh;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .display {
+        width: 85%;
+        min-height: 140px;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    #hikari-smile {
+        width: 100px;
+        height: 100px;
+    }
+}

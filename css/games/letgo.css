@@ -1,0 +1,908 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+body{
+
+      position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;  
+    min-height:100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background:url(../../assets/images/bg.jpg) ;
+    background-repeat: no-repeat;
+          background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index:-1;
+    gap:10px;
+    
+
+
+}
+
+.title{
+
+font-size: 24px;
+text-align: center;
+ display: flex;
+ justify-content: center;
+  text-align: center;
+  color:#000000c1;
+  margin-top: 30px;
+
+ 
+
+
+}
+
+
+.paper{
+
+margin-top: 100px;
+background-color: #fff;
+height:200px;
+width:400px;
+
+
+
+
+
+
+}
+
+
+
+.main-container{
+display: flex;
+justify-content:center ;
+align-items: center;
+ flex-direction:column;
+
+
+
+
+
+}
+
+.write-screen{
+
+opacity: 1;
+
+
+}
+
+ .continue-btn{
+
+   width:400px;  
+   display:flex;
+   justify-content: flex-end;
+   align-items:center;  
+gap:8px;
+background-color: transparent;
+outline: none;
+border: none;
+cursor: pointer;
+margin-top: 30px;
+font:inherit;
+
+
+
+ }
+
+ .choose-screen{
+
+margin-top: 60px;
+display:flex;
+flex-direction:column;   
+justify-content:center;
+ align-items:center;
+gap:20px;
+opacity:0;
+font-style: normal;
+
+
+
+ }
+
+
+ 
+.cards{
+    display:flex;
+    flex-direction:column;   
+justify-content:center;
+cursor: pointer;
+    gap:15px;     
+ align-items:center;
+ border: none;
+ outline:none;
+   width:120px;
+    height:70px;
+color:#000;
+border-radius:20px;
+box-shadow: 0 10px 20px rgba(129,129,130,0.3);
+background: rgba(255,255,255,0.25);
+text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+
+
+
+
+
+
+}
+
+
+
+.choices{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:60px;
+}
+
+.write-screen,
+.choose-screen{
+
+position:absolute;
+transition:.4s;
+    top:0;
+    left:0;
+    width:100%;
+
+
+}
+
+/*********************************** BLOW ********************************************************/
+.fly{
+
+    transform:
+        translateX(250px)
+        translateY(-80px)
+        rotate(35deg);
+
+    opacity:0;
+
+    filter:blur(3px);
+
+}
+
+
+.choose-screen{
+
+
+    pointer-events: none;
+}
+
+
+
+
+
+.hikari-choice{
+
+    opacity:0;
+    display:flex;
+flex-direction:column;   
+justify-content:flex-end;
+ align-items:center;
+ margin-top: 60px;
+
+  position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+
+   transition:.4s;
+
+   z-index:10;
+    
+ 
+
+
+
+}
+
+
+
+
+
+#hikari-smile{
+
+height:80px;
+width: 80px;
+
+
+
+
+}
+
+
+#msg{
+
+font-size: 10px;
+color: #333;
+
+
+
+}
+
+#msgF{
+
+font-size: 24px;
+color: #333;
+
+
+
+}
+
+#take-me-home{
+
+  
+display:flex;
+justify-content:center;
+align-items:center;
+color:#000;
+border-radius:20px;
+box-shadow: 0 10px 20px rgba(129,129,130,0.3);
+background: rgba(255,255,255,0.25);
+cursor: pointer;
+width: 180px;
+height: 60px;
+
+outline: none;
+text-decoration: none;
+
+}
+
+
+
+#take-me-home:hover{
+
+  
+
+
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+
+
+
+}
+
+
+#hikari-smileF{
+
+
+height:200px;
+width: 200px;
+
+
+
+}
+.finish-screen{
+
+    position: absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:.4s;
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+
+.continue2{
+    
+ width:400px;  
+   display:flex;
+   justify-content: flex-end;
+   align-items:center; 
+
+gap:8px;
+background-color: transparent;
+outline: none;
+border: none;
+cursor: pointer;
+margin-top: 30px;
+font:inherit;
+opacity: 0;
+
+
+  position:fixed;
+
+    top:70%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    transition: 0.5s;
+
+}
+
+
+
+
+.animation-screen{
+
+    position: fixed;
+
+    inset: 0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+.lighter{
+    position:absolute;
+
+    left:200px;
+    top:450px;
+
+    width:80px;
+    opacity: 0;
+    cursor:pointer;
+    z-index: 10;
+}
+
+
+.paper2{
+
+    width:300px;
+    height:300px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+    filter:
+brightness(.6)
+contrast(1.2);
+opacity:1;
+
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+
+
+.burnMark{
+
+    position:absolute;
+
+    width:50px;
+    height:50px;
+
+    background:#111;
+
+
+
+    border-radius:50%;
+
+    filter:blur(6px);
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+}
+
+
+#paperText{
+
+text-align: center;
+font-size: 30px;
+
+}
+
+
+.blow-screen{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+.blow-screen.show{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+.paper-blow {
+    width: min(80vw, 500px);
+
+    min-height: 300px;
+    height: auto;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    background: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow-wrap: break-word;
+}
+#blowBtn{
+
+    position:absolute;
+    color:#000;
+border-radius:20px;
+box-shadow: 0 10px 20px rgba(129,129,130,0.3);
+background: rgba(255,255,255,0.25);
+cursor: pointer;
+width: 80px;
+height: 60px;
+    bottom:70px;
+    left:50%;
+
+    transform:translateX(-50%);
+   
+    width:180px;
+}
+
+.word {
+    display: inline-block;
+    margin-right: 6px;
+    transition: 1s;
+    max-width: 100%;
+}
+.paper-cut {
+    width: 300px;
+    min-height: 300px;
+    height: auto;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#paperTextCut {
+    width: 80%;
+    height: auto;
+
+    text-align: center;
+    color: black;
+    font-size: 18px;
+     z-index: 100;
+    overflow-wrap: break-word;
+}
+
+
+
+
+
+.cut-screen{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+}
+.scissors{
+
+position:fixed;
+
+left:100px;
+top:320px;
+
+width:100px;
+height:100px;
+ pointer-events: auto;
+z-index:999;
+
+}
+
+.paper-left,
+.paper-right{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+    background:white;
+}
+
+.paper-left{
+    left:0;
+}
+
+.paper-right{
+    right:0;
+}
+
+.paper-left,
+.paper-right{
+
+    transition:1s ease;
+
+}
+
+.cutLeft{
+
+    transform:
+        rotate(-20deg)
+        translate(-120px,220px);
+
+}
+
+.cutRight{
+
+    transform:
+        rotate(20deg)
+        translate(120px,220px);
+
+}
+
+
+
+
+
+
+.hide{
+
+opacity:0;
+pointer-events:none;
+}
+.show{
+
+opacity:1;
+pointer-events:auto;
+}
+
+
+
+
+
+/* =========================================================
+    MOBILE + TABLET RESPONSIVE
+   ========================================================= */
+
+/* ---------- iPad / Tablets ---------- */
+
+@media (max-width: 1024px) {
+
+    body {
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        padding: 0 20px;
+    }
+
+    .title {
+        width: 90%;
+        font-size: 22px;
+        margin-top: 35px;
+        line-height: 1.4;
+    }
+
+    .paper {
+        width: min(400px, 85vw);
+        height: 220px;
+        margin-top: 70px;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .continue-btn {
+        width: min(400px, 85vw);
+        margin-top: 25px;
+    }
+
+    .choices {
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .cards {
+        width: 120px;
+        height: 70px;
+    }
+
+    /* Hikari */
+
+    .hikari-choice {
+        width: 90vw;
+    }
+
+    #hikari-smile {
+        width: 75px;
+        height: 75px;
+    }
+
+    #hikari-smileF {
+        width: min(200px, 45vw);
+        height: min(200px, 45vw);
+    }
+
+    #msgF {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    #take-me-home {
+        width: 180px;
+        height: 55px;
+    }
+
+    /* Finish */
+
+    .continue2 {
+        width: min(400px, 85vw);
+    }
+
+    /* Burning paper */
+
+    .paper2,
+    .paper-blow,
+    .paper-cut {
+        width: min(300px, 70vw);
+        height: min(300px, 70vw);
+    }
+
+    .lighter {
+        left: 15vw;
+        top: auto;
+        bottom: 10vh;
+        width: 70px;
+    }
+
+    #paperText {
+    width: 80%;
+    max-width: 80%;
+
+    text-align: center;
+
+    font-size: clamp(14px, 3vw, 24px);
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    margin: 0 auto;
+}
+
+    #paperTextCut {
+        font-size: clamp(14px, 3vw, 18px);
+        max-width: 80%;
+    }
+
+    #blowBtn {
+        width: min(180px, 50vw);
+        bottom: 8vh;
+    }
+
+    .scissors {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0 12px;
+        overflow: hidden;
+    }
+
+    .title {
+        width: 95%;
+        font-size: 18px;
+        margin-top: 25px;
+    }
+
+    .paper {
+        width: 90vw;
+        max-width: 400px;
+        height: 180px;
+        margin-top: 55px;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .continue-btn {
+        width: 90vw;
+        max-width: 400px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .choices {
+        width: 95%;
+        gap: 10px;
+        margin-top: 40px;
+    }
+
+    .cards {
+        width: 105px;
+        height: 65px;
+        border-radius: 16px;
+        font-size: 12px;
+    }
+
+
+    /* Hikari */
+
+    .hikari-choice {
+        width: 95vw;
+    }
+
+    #hikari-smile {
+        width: 65px;
+        height: 65px;
+    }
+
+    #hikari-smileF {
+        width: 150px;
+        height: 150px;
+    }
+
+    #msg {
+        font-size: 9px;
+        text-align: center;
+    }
+
+    #msgF {
+        width: 90%;
+        font-size: 18px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    #take-me-home {
+        width: 160px;
+        height: 50px;
+        font-size: 13px;
+    }
+
+
+    /* Finish screen */
+
+    .finish-screen {
+        height: 100dvh;
+    }
+
+    .continue2 {
+        width: 90vw;
+        font-size: 14px;
+        top: 85%;
+    }
+
+
+    /* Burning animation */
+
+    .paper2,
+    .paper-blow,
+    .paper-cut {
+        width: 75vw;
+        height: 75vw;
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    #paperText {
+        font-size: clamp(16px, 5vw, 24px);
+        width: 80%;
+        line-height: 1.3;
+    }
+
+    .lighter {
+        width: 55px;
+        left: 10vw;
+        bottom: 12vh;
+    }
+
+    #blowBtn {
+        width: 150px;
+        height: 50px;
+        bottom: 7vh;
+        font-size: 13px;
+    }
+
+    #paperTextCut {
+        width: 80%;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .scissors {
+        width: 65px;
+        height: 65px;
+    }
+
+}
+
+
+/* ---------- Very small phones ---------- */
+
+@media (max-width: 380px) {
+
+    .title {
+        font-size: 16px;
+    }
+
+    .paper {
+        height: 160px;
+    }
+
+    .cards {
+        width: 95px;
+        height: 60px;
+        font-size: 11px;
+    }
+
+    #hikari-smileF {
+        width: 130px;
+        height: 130px;
+    }
+
+    #msgF {
+        font-size: 16px;
+    }
+
+    #take-me-home {
+        width: 145px;
+        height: 45px;
+    }
+
+}
+

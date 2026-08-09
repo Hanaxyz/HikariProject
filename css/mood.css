@@ -1,0 +1,406 @@
+*{margin:0;
+  padding:0;
+
+}
+
+
+body {
+    margin: 0;
+    padding: 50px 20px;
+
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    background: url(../assets/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.mood-container{
+
+margin-top:30px;
+ width:90%;
+max-width:500px;
+margin-bottom: 50px;
+
+
+
+}
+
+.buttons{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap:20px;
+
+
+
+}
+
+.btn{
+
+padding: 14px 28px;
+color:#000;
+border-radius:20px;
+box-shadow: 0 10px 20px rgba(129,129,130,0.3);
+background: rgba(255,255,255,0.25);
+display: inline-block;
+text-decoration: none;
+text-align: center;
+
+
+
+}
+
+
+#hi{
+
+text-align: center;
+padding-bottom: 15px;
+
+}
+
+
+#title{
+
+font-size: 15px;
+text-align: center;
+ display: flex;
+ justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+
+
+
+
+}
+
+
+
+.img-container{
+ display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+
+
+}
+
+
+img{
+
+height:100px;
+width:100px;
+cursor: pointer;
+  transition: all 1s ease-in-out;
+
+
+
+}
+
+img.selected{
+
+transform: scale(1.5);
+
+
+
+
+
+}
+
+
+
+
+#message{
+
+font-size: 15px;
+text-align: center;
+ display: flex;
+ justify-content: center;
+ opacity: 0.8;
+ transition:  1s ease-in;
+
+}
+
+
+img.fade{
+
+transform: scale(0.5) ;
+opacity:0;
+
+
+
+
+
+
+}
+
+#message.fadeM{opacity: 0;
+    transition: 1s ease;
+
+}
+
+
+
+#enter{
+  padding-bottom: 30px;
+  font-size: 16px;
+  
+
+}
+
+
+#area{
+
+border:none;
+height:40px;
+width:200px;
+background-color: #fff;
+box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+border-radius: 10px;
+text-align: center;
+
+
+
+}
+
+
+#hikari-happy{
+
+height:170px;
+width:170px;
+
+
+
+
+
+}
+
+#start{
+
+
+  
+
+     width:100px;
+    height:60px;
+    
+    border: none;
+    border-radius: 30px;
+
+    background: rgba(242, 242, 237, 0.701);
+    backdrop-filter: blur(8px);
+
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+
+
+
+
+}
+
+#start:active{
+    transform: scale(0.96);
+}
+
+/* Name screen */
+
+.name-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* Home */
+
+.home-container {
+    display: none;
+
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+/* States */
+
+.home-container.show {
+    display: flex;
+}
+
+.home-container.hide {
+    display: none;
+}
+
+.name-screen.show {
+    display: flex;
+}
+
+.name-screen.hide {
+    display: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+
+/*  Phone */
+@media (max-width: 600px) {
+
+    body {
+        padding: 30px 15px;
+        gap: 35px;
+    }
+
+
+    .mood-container {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+
+    .img-container {
+        width: 100%;
+        gap: 5px;
+    }
+
+
+    .mood {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    #hi {
+        font-size: 20px;
+    }
+
+
+    #title {
+        font-size: 14px;
+    }
+
+
+    #message {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+
+    .buttons {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 20px;
+    }
+
+
+    #hikari-happy {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    #enter {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 20px 20px;
+    }
+
+
+    #area {
+        width: min(200px, 80%);
+    }
+
+}
+
+
+/* Tablet / iPad */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        padding: 40px 30px;
+        gap: 45px;
+    }
+
+
+    .mood-container {
+        width: 90%;
+        max-width: 600px;
+    }
+
+
+    .mood {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .buttons {
+        width: 90%;
+        max-width: 300px;
+    }
+
+
+    .btn {
+        padding: 16px 25px;
+    }
+
+
+    #hikari-happy {
+        width: 160px;
+        height: 160px;
+    }
+
+}
+
+footer {
+    background-color: #ffffff27;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    width: 100%;
+    height: 50px;          
+    font-size: 10px;
+    color: #000000a1;
+  position: relative;
+    bottom: 10px;              
+    left: 0;
+}

@@ -1,0 +1,30 @@
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    z-index: 10000;
+     position: relative;
+}
+
+.home-button{
+display: flex;
+  width: 80%;
+    z-index: 10000;
+     position: relative;
+
+
+}
+
+ .home , .go-back{
+
+cursor: pointer;
+pointer-events: auto;
+
+ }
+
+ .light-nav {
+    color: white;
+}
+
+
