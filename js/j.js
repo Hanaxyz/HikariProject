@@ -2,7 +2,7 @@ const frame=document.querySelector(".frame");
 const submit=document.getElementById("submit");
 const addJournal=document.querySelector(".add-journal");
 
-
+const historybtn=document.querySelector(".history-journal");
 const area=document.getElementById("area");
 const historyContainer=document.querySelector(".history-container");
 
